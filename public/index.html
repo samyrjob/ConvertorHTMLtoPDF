@@ -28,71 +28,83 @@
 
         <!-- Main Content -->
         <main>
+            <div class="side-by-side">
+
+                 <!-- LEFT SIDE -->
+                <div class="left-col">
+
+
+                    <!-- Tab Navigation -->
+                    <div class="tabs">
+                        <button class="button tab-btn active" data-tab="paste">Paste HTML</button>
+                        <button class="button button-outline tab-btn" data-tab="upload">Upload File</button>
+                    </div>
+     
+                    <!-- Paste Tab -->
+                    <div id="paste-tab" class="tab-content active">
+                        <fieldset>
+                            <label for="html-input">HTML Content</label>
+                            <textarea id="html-input" placeholder="Paste your HTML content here..." rows="12"></textarea>
+                        </fieldset>
+                    </div>
+     
+                    <!-- Upload Tab -->
+                    <div id="upload-tab" class="tab-content">
+                        <div class="upload-area" id="upload-area">
+                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                            </svg>
+                            <p>Drop HTML file here or click to browse</p>
+                            <input type="file" id="file-input" accept=".html,.htm" hidden>
+                        </div>
+                        <div id="file-info" class="file-info">
+                            <span id="file-name"></span>
+                            <button id="clear-file" class="button button-clear">Remove</button>
+                        </div>
+                    </div>
+                    <!-- PDF Options -->
+                    <fieldset>
+                        <legend>PDF Options</legend>
+                        <div class="row">
+                            <div class="column">
+                                <label for="page-size">Page Size</label>
+                                <select id="page-size">
+                                    <option value="A4" selected>A4 (210 × 297mm)</option>
+                                    <option value="Letter">Letter (8.5 × 11")</option>
+                                    <option value="Legal">Legal (8.5 × 14")</option>
+                                </select>
+                            </div>
+                            <div class="column">
+                                <label for="orientation">Orientation</label>
+                                <select id="orientation">
+                                    <option value="portrait" selected>Portrait</option>
+                                    <option value="landscape">Landscape</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                 <!-- RIGHT SIDE -->
+                <div class="right-col">
+     
+     
+                    <!-- Preview -->
+                    <fieldset>
+                        <label>Preview</label>
+                        <div class="preview-container">
+                            <iframe id="preview-frame" title="HTML Preview"></iframe>
+                        </div>
+                    </fieldset>
+     
+                    <!-- Convert Button -->
+                    <button id="convert-btn" class="button button-large">Convert to PDF</button>
+        
+                    <!-- Status Messages -->
+                    <div id="status-container"></div>
+                </div>
+             </div>
             
-            <!-- Tab Navigation -->
-            <div class="tabs">
-                <button class="button tab-btn active" data-tab="paste">Paste HTML</button>
-                <button class="button button-outline tab-btn" data-tab="upload">Upload File</button>
-            </div>
-
-            <!-- Paste Tab -->
-            <div id="paste-tab" class="tab-content active">
-                <fieldset>
-                    <label for="html-input">HTML Content</label>
-                    <textarea id="html-input" placeholder="Paste your HTML content here..." rows="12"></textarea>
-                </fieldset>
-            </div>
-
-            <!-- Upload Tab -->
-            <div id="upload-tab" class="tab-content">
-                <div class="upload-area" id="upload-area">
-                    <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
-                    </svg>
-                    <p>Drop HTML file here or click to browse</p>
-                    <input type="file" id="file-input" accept=".html,.htm" hidden>
-                </div>
-                <div id="file-info" class="file-info">
-                    <span id="file-name"></span>
-                    <button id="clear-file" class="button button-clear">Remove</button>
-                </div>
-            </div>
-
-            <!-- PDF Options -->
-            <fieldset>
-                <legend>PDF Options</legend>
-                <div class="row">
-                    <div class="column">
-                        <label for="page-size">Page Size</label>
-                        <select id="page-size">
-                            <option value="A4" selected>A4 (210 × 297mm)</option>
-                            <option value="Letter">Letter (8.5 × 11")</option>
-                            <option value="Legal">Legal (8.5 × 14")</option>
-                        </select>
-                    </div>
-                    <div class="column">
-                        <label for="orientation">Orientation</label>
-                        <select id="orientation">
-                            <option value="portrait" selected>Portrait</option>
-                            <option value="landscape">Landscape</option>
-                        </select>
-                    </div>
-                </div>
-            </fieldset>
-
-            <!-- Preview -->
-            <fieldset>
-                <legend>Preview</legend>
-                <div class="preview-container">
-                    <iframe id="preview-frame" title="HTML Preview"></iframe>
-                </div>
-            </fieldset>
-
-            <!-- Convert Button -->
-            <button id="convert-btn" class="button button-large">Convert to PDF</button>
-
-            <!-- Status Messages -->
-            <div id="status-container"></div>
 
         </main>
 
