@@ -1,0 +1,322 @@
+/* ============================================================================
+   ULTRA-CLEAN MINIMAL DESIGN WITH MILLIGRAM
+   Design Philosophy: Less is more
+   ============================================================================ */
+
+/* Variables */
+:root {
+    --accent-color: #9b4dca;
+    --text-muted: #606c76;
+    --border-light: #d1d1d1;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+}
+
+/* Base */
+body {
+    background: #fafafa;
+}
+
+.container {
+    max-width: 80rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Header - Minimal & Centered */
+.header {
+    text-align: center;
+    margin-bottom: 8rem;
+    padding-bottom: 4rem;
+    border-bottom: .1rem solid var(--border-light);
+}
+
+.header h1 {
+    font-size: 4.2rem;
+    font-weight: 300;
+    letter-spacing: -.1rem;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    color: var(--text-muted);
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+/* Tabs - Clean Toggle */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tab-btn {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.tab-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Textarea - Monospace & Clean */
+#html-input {
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 1.4rem;
+    min-height: 32rem;
+    border: .1rem solid var(--border-light);
+    background: white;
+    line-height: 1.8;
+}
+
+/* Upload Area - Minimal Dashed Border */
+.upload-area {
+    border: .2rem dashed var(--border-light);
+    padding: 10rem 3rem;
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    transition: all .3s;
+    margin-bottom: 2rem;
+}
+
+.upload-area:hover {
+    border-color: var(--accent-color);
+    background: #fafafa;
+}
+
+.upload-area.dragover {
+    border-color: var(--accent-color);
+    background: #f4f4f4;
+}
+
+.upload-icon {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.upload-area p {
+    color: var(--text-muted);
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+/* File Info - Hidden by Default */
+.file-info {
+    display: none;
+    padding: 1.5rem;
+    background: #f4f4f4;
+    border: .1rem solid var(--border-light);
+    margin-bottom: 2rem;
+}
+
+.file-info.active {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#file-name {
+    font-weight: 600;
+}
+
+/* Preview - Full Height */
+.preview-container {
+    border: .1rem solid var(--border-light);
+    background: white;
+    height: 50rem;
+    overflow: hidden;
+}
+
+#preview-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Button - Large & Prominent */
+.button-large {
+    width: 100%;
+    height: 5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 3rem;
+}
+
+/* Status Messages - Minimal */
+#status-container {
+    margin-top: 2rem;
+}
+
+.status-message {
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    border-left: .4rem solid;
+    background: white;
+    display: none;
+}
+
+.status-message.visible {
+    display: block;
+}
+
+.status-success {
+    border-left-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.status-error {
+    border-left-color: var(--error-color);
+    color: var(--error-color);
+}
+
+.status-info {
+    border-left-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Loading Spinner */
+.spinner {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: .3rem solid rgba(155, 77, 202, .3);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+    margin-right: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Footer - Minimal */
+.footer {
+    text-align: center;
+    padding-top: 5rem;
+    margin-top: 8rem;
+    border-top: .1rem solid var(--border-light);
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 1.4rem;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Fieldset - Clean Styling */
+fieldset {
+    background: white;
+    border: .1rem solid var(--border-light);
+    margin-bottom: 3rem;
+}
+
+legend {
+    font-weight: 600;
+}
+
+/* Focus States - Subtle */
+button:focus,
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 .2rem rgba(155, 77, 202, .1);
+}
+
+/* Smooth Transitions */
+button,
+select,
+textarea,
+input,
+.upload-area,
+.tab-btn {
+    transition: all .3s ease;
+}
+
+/* Typography Polish */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive - Mobile First */
+@media (max-width: 40.0rem) {
+    .container {
+        padding-top: 3rem;
+    }
+    
+    .header {
+        margin-bottom: 5rem;
+        padding-bottom: 3rem;
+    }
+    
+    .header h1 {
+        font-size: 3.2rem;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .upload-area {
+        padding: 8rem 2rem;
+    }
+    
+    .preview-container {
+        height: 40rem;
+    }
+}
+
+/* Clean & Professional Polish */
+.button:hover,
+.button-outline:hover {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .2rem .8rem rgba(0, 0, 0, .1);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* Minimal Scrollbar */
+::-webkit-scrollbar {
+    width: .8rem;
+    height: .8rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-light);
+    border-radius: .4rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
